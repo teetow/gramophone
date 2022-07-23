@@ -28,6 +28,11 @@ const UnsplashView = styled.div(
   {
     display: "grid",
     gridTemplateAreas: `"main"`,
+
+    "& > *": {
+      gridArea: "main",
+    },
+
     "&:hover": {
       "&:after": {
         opacity: "0.8",
@@ -35,7 +40,7 @@ const UnsplashView = styled.div(
       },
     },
   },
-  (props: { imgUrl: string }) => ({
+  (props: { imgUrl: string; hue: number }) => ({
     "&:before": {
       content: `""`,
       backgroundColor: mauveDark.mauve1,
@@ -46,6 +51,7 @@ const UnsplashView = styled.div(
       content: `""`,
       gridArea: "main",
       backgroundImage: props.imgUrl,
+      filter: `hue-rotate(${props.hue * 360}deg) saturate(${props.hue > 0 ? 2.0 : 1.0})`,
       opacity: "0.5",
       transition: "opacity 120ms ease-in-out",
       zIndex: "-1",
@@ -53,11 +59,11 @@ const UnsplashView = styled.div(
   })
 );
 
-type Props = PropsWithChildren<{ className?: string; id?: string }>;
+type Props = PropsWithChildren<{ className?: string; hue?: number; id?: string }>;
 
-const Unsplash = ({ className, id = defaultId, children }: Props) => {
+const Unsplash = ({ className, hue = 0, id = defaultId, children }: Props) => {
   return (
-    <UnsplashView className={className} imgUrl={`url(${unsplashUrl(id)})`}>
+    <UnsplashView hue={hue} className={className} imgUrl={`url(${unsplashUrl(id)})`}>
       {children}
     </UnsplashView>
   );

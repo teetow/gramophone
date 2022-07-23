@@ -3,20 +3,9 @@ import { PropsWithChildren } from "react";
 
 const GridView = styled.div({
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(16%, 256px))",
+  gridTemplateColumns: "repeat(auto-fit, 256px)",
   gap: "2em",
-
-  "& > *": {
-    display: "grid",
-    gridTemplateAreas: `"main"`,
-  },
-
-  "& > *:after": {
-    content: `""`,
-    gridArea: "main",
-    paddingTop: "100%",
-    pointerEvents: "none",
-  },
+  justifyContent: "center",
 });
 
 type Props = PropsWithChildren<{}>;
