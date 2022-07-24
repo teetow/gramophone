@@ -55,7 +55,8 @@ function App() {
           <Header css={{ gridColumn: "1 / -1" }}>
             <Logo css={{ maxWidth: "30em" }} />
             <p css={{ color: mauveDark.mauve11 }}>
-              Playlists from the Gramophone listening party events in the Tantacrul Discord server
+              Playlists from the Gramophone listening party events in the <a href="https://discord.gg/bW7RjkNb5z">Tantacrul Discord server</a>. <br />
+              Each playlist contains songs from a diverse range of genres submitted by a diverse range of people, allowing you to break out of endlessly similar algorithmic recommendations.
             </p>
           </Header>
           {Object.entries(gramophones as GramoList)
