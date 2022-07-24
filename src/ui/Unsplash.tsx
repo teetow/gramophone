@@ -18,8 +18,9 @@ import { mauveDark } from "@radix-ui/colors";
 // const usId = "photo-1510100831744-b8d7fea7ca2e"
 
 const prefix = "https://images.unsplash.com/";
+const size = 512;
 const suffix =
-  "?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&h=256&q=80";
+  `?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=${size}&h=${size}&q=80`;
 const defaultId = "photo-1510100831744-b8d7fea7ca2e";
 
 const unsplashUrl = (id: string) => `${prefix}${id}${suffix}`;
