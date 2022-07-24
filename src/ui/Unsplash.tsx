@@ -52,6 +52,7 @@ const UnsplashView = styled.div(
       content: `""`,
       gridArea: "main",
       backgroundImage: props.imgUrl,
+      backgroundSize: "cover",
       filter: `hue-rotate(${props.hue * 360}deg) saturate(${props.hue > 0 ? 2.0 : 1.0})`,
       opacity: "0.5",
       transition: "opacity 120ms ease-in-out",
